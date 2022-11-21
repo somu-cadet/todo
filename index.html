@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body{
+			background-image: url(https://static.remove.bg/remove-bg-web/221525818b4ba04e9088d39cdcbd0c7bcdfb052e/assets/start_remove-c851bdf8d3127a24e2d137a55b1b427378cd17385b01aec6e59d5d4b5f39d2ec.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	</style>
+	<script src="https://kit.fontawesome.com/5197a2f084.js" crossorigin="anonymous"></script>
+	<style type="text/css">
+		.list-type{
+			list-style: none;
+		}
+		.listitem{
+			font-size: 1.5rem;
+		}
+	</style>
+	<script type="text/javascript">
+		function todo(){
+		let newTodo=document.getElementById("newTodo").value
+		/*console.log(newTodo)*/
+		document.getElementById("newTodo").value=""
+		if(newTodo===""){
+           alert("enter a todo")
+		}
+		else{
+		addTodo(newTodo)
+	}
+	}
+	function addTodo(newValue){
+		const d=new Date();
+		
+		let ul=document.querySelector("ul")
+		//console.log(ul)
+		let li=document.createElement("li")
+		li.innerHTML=`
+		<span class="listitem">${newValue}${d.getHours()}:${d.getMinutes()}</span> 
+		<i class="fa-sharp fa-solid fa-rectangle-xmark"></i>`
+		li.classList.add("list-type")
+		ul.appendChild(li)
+	}
+	</script>
+	<style type="text/css">
+		#newTodo{
+			padding: 0.5%;
+			margin-left: 40%;
+			margin-top: 10%;
+		}
+        #mani{
+        	background-color: white;
+        	width: 8%;
+        	margin-left: 40%;
+
+        }
+        #siva{
+        	background-color: skyblue;
+        	width: 9.5%;
+        	margin-left: 40%;
+        }
+	</style>
+</head>
+<body>
+       <input placeholder="enter name" id="newTodo"/>
+       <ul id="siva">
+       </ul>
+       <button onclick="todo()" id="mani">submit</button>
+</body>
+</html>
